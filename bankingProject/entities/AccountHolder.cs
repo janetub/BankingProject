@@ -8,6 +8,9 @@ namespace bankingProject.entities
 {
     public class AccountHolder
     {
-        public string name;
+        private string name;
+        private string email;
+        private string address;
+        
     }
 }
