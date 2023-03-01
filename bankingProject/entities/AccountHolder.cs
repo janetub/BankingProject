@@ -8,6 +8,6 @@ namespace bankingProject.entities
 {
     public class AccountHolder
     {
-
+        public string name;
     }
 }
