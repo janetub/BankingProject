@@ -1,4 +1,7 @@
 ﻿enum AccountType
 {
-    Savings, Checking
+    /// <summary>
+    /// various account types
+    /// </summary>
+    SavingsAccount, CheckingAccount, MoneyMarketAccount
 }

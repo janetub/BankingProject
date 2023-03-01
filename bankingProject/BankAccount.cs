@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bankingProject.entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,12 @@ namespace BankingProject
 {
     public class BankAccount
     {
+        /// <summary>
+        /// this is a parent/base class, not meant to be instantiated
+        /// </summary>
         public static int ACCOUNT_ID_COUNTER = 20230;
         public int AccountNumber { get; private set; }
-        public string AccountName { get; set; }
+        public AccountHolder AccountHolder { get; set; }
         public decimal Balance { get; private set;  }
         public DateTime DateCreated { get; private set; }
 

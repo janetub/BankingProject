@@ -8,9 +8,12 @@ namespace bankingProject
 {
     public class SavingsAccount : BankAccount
     {
+        /// <summary>
+        /// this is a child class of type, saving account
+        /// </summary>
         public SavingsAccount(string name, decimal initialDeposit) : Bankaccount(name, initialDeposit)
         {
-
+            
         }
     }
 }
