@@ -8,16 +8,18 @@ namespace bankingProject.entities
 {
     public class ID
     {
-        public string IdNumber  { get; }
-        public bool IsVerified  { get; }
+        public string IDNumber  { get; }
+        public bool IsVerified  { get; private set; }
         public string Name { get; }
         public DateTime BirthDate { get; }
         public int Age { get; }
         public string Nationality { get; }
+        public string IDType { get; }
 
-        public ID(string idNumber, string name, DateTime birthDate, string nationality)
+        public ID(string idType, string idNumber, string name, DateTime birthDate, string nationality)
         {
-            this.IdNumber = idNumber;
+            this.IDType = idType; 
+            this.IDNumber = idNumber;
             this.IsVerified = false;
             this.Name = name;
             this.BirthDate = birthDate;

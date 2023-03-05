@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankingProject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace bankingProject
         /// <summary>
         /// this is a child class of type, saving account
         /// </summary>
-        public SavingsAccount(string name, decimal initialDeposit) : Bankaccount(name, initialDeposit)
+        public SavingsAccount(string name, decimal initialDeposit) : base(name, initialDeposit)
         {
             
         }

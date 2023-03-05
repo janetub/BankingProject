@@ -8,6 +8,7 @@ namespace bankingProject.entities
 {
     internal class BankPersonnel
     {
+        public WorkID id {  get; }
         // a bank personnel will be athorized to edit the AccountHolder which contains information that is used for the banking processes
     }
 }
