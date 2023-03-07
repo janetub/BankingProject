@@ -12,7 +12,7 @@ namespace bankingProject.entities
         public string CompanyName { get; }
         public string JobTitle { get; }
 
-        public WorkID(string idNumber, string name, DateTime birthDate, string nationality, string employerName, string companyName, string jobTitle) : base(idNumber, name, birthDate, nationality)
+        public WorkID(string idNumber, string name, DateTime birthDate, string nationality, string employerName, string companyName, string jobTitle) : base("Work ID", idNumber, name, birthDate, nationality)
         {
             this.EmployerName = employerName;
             this.CompanyName = companyName;

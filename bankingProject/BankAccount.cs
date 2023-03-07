@@ -17,13 +17,24 @@ namespace BankingProject
         public AccountHolder AccountHolder { get; set; }
         public decimal Balance { get; private set;  }
         public DateTime DateCreated { get; private set; }
+        public AccountType AccountType { get; private set; }
+        public List<Transaction> TransactionHistory { get; private set; }
 
-        public BankAccount(string name, decimal initialDeposit)
+        public BankAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location, AccountType accountType)
         {
+            if (bankPersonnel is not BankPersonnel && bankPersonnel.ID.IsVerified)
+            {
+                throw new ArgumentException("Creator is not a credible bank personnel.");
+            }
+            AccountHolder accountHolder = new AccountHolder(bankPersonnel, id, address, phoneNum, emailAdd);
+            this.AccountHolder = accountHolder;
             this.AccountNumber = BankAccount.ACCOUNT_ID_COUNTER++;
-            this.AccountName = name;
             this.Balance = initialDeposit;
             this.DateCreated = DateTime.Now;
+            Transaction transaction = new Transaction(initialDeposit, "Account Opening", "", location);
+            TransactionHistory.Add(transaction);
+            AccountType = accountType;
+
         }
     }
 }

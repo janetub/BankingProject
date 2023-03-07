@@ -12,15 +12,14 @@ namespace bankingProject.entities
         /// <summary>
         /// this class will contain the information that might be vital to the processes in banking
         /// </summary>
-        private string _name;
-        private string _address;
-        private int _age;
-        private DateTime _birthDate;
-        private string _nationality;
-        private ArrayList _phoneNumbers;
-        private ArrayList _emailAddress;
-        private Dictionary<string, string> validIDs;
-        private string _transactions; //
+        protected internal string name { get; private set; }
+        protected internal string address { get; private set; }
+        protected internal int age { get; private set; }
+        protected internal DateTime birthDate { get; private set; }
+        protected internal string nationality { get; private set; }
+        protected internal ArrayList phoneNumbers { get; private set; }
+        protected internal ArrayList emailAddress { get; private set; }
+        protected internal Dictionary<string, string> validIDs { get; private set; }  
         /// <summary>
         /// Account Holder Constructor
         /// </summary>
@@ -32,19 +31,19 @@ namespace bankingProject.entities
         /// <exception cref="ArgumentException"></exception>
         public AccountHolder(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd)
         {
-            if (bankPersonnel is not BankPersonnel && bankPersonnel.id.IsVerified)
+            if (bankPersonnel is not BankPersonnel && bankPersonnel.ID.IsVerified)
             {
                 throw new ArgumentException("Creator is not a credible bank personnel.");
             }
-            this._name = id.Name;
-            this._address = address;
-            this._age = id.Age;
-            this._birthDate = id.BirthDate;
-            this._nationality = id.Nationality;
-            this._phoneNumbers.Add(phoneNum);
-            this._emailAddress.Add(emailAdd);
+            this.name = id.Name;
+            this.address = address;
+            this.age = id.Age;
+            this.birthDate = id.BirthDate;
+            this.nationality = id.Nationality;
+            this.phoneNumbers.Add(phoneNum);
+            this.emailAddress.Add(emailAdd);
         }
-        public void AddID(ID id)
+        public void AddID(BankPersonnel bankPersonnel, ID id)
         {
             if (id.IsVerified)
             {
@@ -52,28 +51,51 @@ namespace bankingProject.entities
             }
             else
             {
-                throw new UnauthorizedAccessException("ID number {id.number} must be verified.");
+                throw new UnauthorizedAccessException($"ID number {id.IDNumber} must be verified.");
             }
         }
-        public void RemoveID(ID id)
+        public void RemoveID(BankPersonnel bankPersonnel, ID id)
         {
+            if (!bankPersonnel.ID.IsVerified)
+                return;
             validIDs.Remove(id.IDNumber);
         }
-        public void AddPhoneNumber(string phoneNumber)
+        public void AddPhoneNumber(BankPersonnel bankPersonnel, string phoneNumber)
         {
-            this._phoneNumbers.Add(phoneNumber);
+            if (!bankPersonnel.ID.IsVerified)
+                return;
+            this.phoneNumbers.Add(phoneNumber);
         }
-        public void RemovePhoneNumber(string phoneNumber)
+        public void RemovePhoneNumber(BankPersonnel bankPersonnel, string phoneNumber)
         {
-            this._phoneNumbers.Remove(phoneNumber);
+            if (!bankPersonnel.ID.IsVerified)
+                return;
+            this.phoneNumbers.Remove(phoneNumber);
         }
-        public void AddEmailAddress(string email)
+        public void AddEmailAddress(BankPersonnel bankPersonnel, string email)
         {
-            this._emailAddress.Add(email);
+            if (!bankPersonnel.ID.IsVerified)
+                return;
+            this.emailAddress.Add(email);
         }
-        public void RemoveEmailAddress(string email)
+        public void RemoveEmailAddress(BankPersonnel bankPersonnel, string email)
         {
-            this._emailAddress.Remove(email);
+            if (!bankPersonnel.ID.IsVerified)
+                return;
+            this.emailAddress.Remove(email);
         }
+        public void UpdateName(BankPersonnel bankPersonnel, string name)
+        {
+            if (!bankPersonnel.ID.IsVerified)
+                throw new UnauthorizedAccessException("Access denied.");
+            this.name = name;
+        }
+        public void UpdateAddress(BankPersonnel bankPersonnel, string address)
+        {
+            if (!bankPersonnel.ID.IsVerified)
+                throw new UnauthorizedAccessException("Access denied.");
+            this.address = address;
+        }
+        
     }
 }

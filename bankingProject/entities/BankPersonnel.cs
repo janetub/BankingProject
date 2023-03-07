@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace bankingProject.entities
 {
-    internal class BankPersonnel
+    public class BankPersonnel
     {
-        public WorkID id {  get; }
-        // a bank personnel will be athorized to edit the AccountHolder which contains information that is used for the banking processes
+        /// <summary>
+        /// a bank personnel will be athorized to edit the AccountHolder which contains information that is used for the banking processes
+        /// </summary>
+        public WorkID ID {  get; }
+        public string Email { get; set; }
+        public BankingPersonnel (WorkID id, string email)
+        {
+            this.ID = id;
+            this.Email = email;
+        }
     }
 }
