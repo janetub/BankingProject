@@ -33,7 +33,7 @@ namespace BankingProject
             this.DateCreated = DateTime.Now;
             Transaction transaction = new Transaction(initialDeposit, "Account Opening", "", location);
             this.TransactionHistory.Add(transaction);
-            AccountType = accountType;
+            this.AccountType = accountType;
 
         }
     }
