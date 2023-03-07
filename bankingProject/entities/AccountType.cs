@@ -1,4 +1,4 @@
-﻿enum AccountType
+﻿public enum AccountType
 {
     /// <summary>
     /// various account types

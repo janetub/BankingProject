@@ -40,3 +40,4 @@ namespace bankingProject.entities
             this.IsVerified = true;
         }
     }
+}
