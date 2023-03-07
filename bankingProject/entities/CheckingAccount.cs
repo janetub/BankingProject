@@ -23,8 +23,8 @@ namespace bankingProject.entities
         public void Deposit(decimal amount, string description, string location)
         {
             Transaction transaction = new Transaction(amount, "Deposit", description, location);
-            Balance += amount;
-            TransactionHistory.Add(transaction);
+            base.Balance += amount;
+            base.TransactionHistory.Add(transaction);
         }
 
         public void Withdraw(decimal amount, string description, string location)
@@ -35,8 +35,8 @@ namespace bankingProject.entities
             }
 
             Transaction transaction = new Transaction(-amount, "Withdrawal", description, location);
-            Balance -= amount;
-            TransactionHistory.Add(transaction);
+            base.Balance -= amount;
+            base.TransactionHistory.Add(transaction);
         }
 
         public void WriteCheck(decimal amount, string description, string location)
@@ -48,16 +48,16 @@ namespace bankingProject.entities
 
             Transaction transaction = new Transaction(-amount, "Check", description, location);
             Balance -= amount;
-            TransactionHistory.Add(transaction);
+            base.TransactionHistory.Add(transaction);
         }
 
         public void ChargeOverdraftFee()
         {
-            if (Balance < 0)
+            if (base.Balance < 0)
             {
-                Balance -= OverdraftFee;
-                Transaction transaction = new Transaction(-OverdraftFee, "Overdraft Fee", "", "");
-                TransactionHistory.Add(transaction);
+                base.Balance -= CheckingAccount.OverdraftFee;
+                Transaction transaction = new Transaction(-CheckingAccount.OverdraftFee, "Overdraft Fee", "", "");
+                base.TransactionHistory.Add(transaction);
             }
         }
     }

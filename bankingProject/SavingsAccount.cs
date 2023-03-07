@@ -21,25 +21,25 @@ namespace bankingProject
         public void Deposit (decimal amount, string description, string location)
         {
             Transaction transaction = new Transaction(amount, "Deposit", description, location);
-            Balance += amount;
-            TransactionHistory.Add(transaction);
+            base.Balance += amount;
+            base.TransactionHistory.Add(transaction);
         }
 
         public void Withdraw (decimal amount, string description, string location)
         {
-            if (amount > Balance)
+            if (amount > base.Balance)
             {
                 throw new ArgumentException("Withdrawal amount exceeds account balance.");
             }
 
             Transaction transaction = new Transaction(-amount, "Withdrawal", description, location);
-            Balance -= amount;
+            base.Balance -= amount;
             TransactionHistory.Add(transaction);
         }
 
         public decimal CalculateInterest (int years, decimal interestRate)
         {
-            decimal interest = Balance * (decimal)Math.Pow(1 + (double)interestRate, years) - Balance;
+            decimal interest = base.Balance * (decimal)Math.Pow(1 + (double)interestRate, years) - base.Balance;
             return interest;
         }
     }

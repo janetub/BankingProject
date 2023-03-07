@@ -32,7 +32,7 @@ namespace BankingProject
             this.Balance = initialDeposit;
             this.DateCreated = DateTime.Now;
             Transaction transaction = new Transaction(initialDeposit, "Account Opening", "", location);
-            TransactionHistory.Add(transaction);
+            this.TransactionHistory.Add(transaction);
             AccountType = accountType;
 
         }
