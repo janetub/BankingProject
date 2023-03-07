@@ -3,5 +3,5 @@
     /// <summary>
     /// various account types
     /// </summary>
-    SavingsAccount, CheckingAccount, MoneyMarketAccount
+    Savings, Checking, MoneyMarket
 }

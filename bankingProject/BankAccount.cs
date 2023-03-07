@@ -13,12 +13,12 @@ namespace BankingProject
         /// this is a parent/base class, not meant to be instantiated
         /// </summary>
         public static int ACCOUNT_ID_COUNTER = 20230;
-        public int AccountNumber { get; private set; }
-        public AccountHolder AccountHolder { get; set; }
-        public decimal Balance { get; private set;  }
-        public DateTime DateCreated { get; private set; }
-        public AccountType AccountType { get; private set; }
-        public List<Transaction> TransactionHistory { get; private set; }
+        public int AccountNumber { get; protected set; }
+        public AccountHolder AccountHolder { get; protected set; }
+        public decimal Balance { get; protected set;  }
+        public DateTime DateCreated { get; protected set; }
+        public AccountType AccountType { get; protected set; }
+        public List<Transaction> TransactionHistory { get; protected set; }
 
         public BankAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location, AccountType accountType)
         {
