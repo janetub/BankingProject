@@ -24,18 +24,6 @@ namespace bankingProject
             base.TransactionHistory.Add(transaction);
         }
 
-        public void Withdraw (decimal amount, string description, string location)
-        {
-            if (amount > base.Balance)
-            {
-                throw new ArgumentException("Withdrawal amount exceeds account balance.");
-            }
-
-            Transaction transaction = new Transaction(-amount, "Withdrawal", description, location);
-            base.Balance -= amount;
-            TransactionHistory.Add(transaction);
-        }
-
         public decimal CalculateInterest (int years, decimal interestRate)
         {
             decimal interest = base.Balance * (decimal)Math.Pow(1 + (double)interestRate, years) - base.Balance;
