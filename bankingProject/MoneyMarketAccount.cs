@@ -16,8 +16,8 @@ namespace bankingProject
         private const decimal interestRate = 0.03M;
         //private const decimal minimumBalance = ;
         private const int withdrawalLimit = 6;
-        public MoneyMarketAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location)
-            : base(bankPersonnel, id, address, phoneNum, emailAdd, initialDeposit, location, AccountType.MoneyMarket)
+        public MoneyMarketAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location, string bankName)
+            : base(bankPersonnel, id, address, phoneNum, emailAdd, initialDeposit, location, AccountType.MoneyMarket, bankName)
         {
         }
         public void Withdraw(decimal amount, string description, string location)

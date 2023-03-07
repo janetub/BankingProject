@@ -15,8 +15,8 @@ namespace bankingProject.entities
         /// </summary>
         private const decimal OverdraftFee = 25;
 
-        public CheckingAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location)
-            : base(bankPersonnel, id, address, phoneNum, emailAdd, initialDeposit, location, AccountType.Checking)
+        public CheckingAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location, string bankName)
+            : base(bankPersonnel, id, address, phoneNum, emailAdd, initialDeposit, location, AccountType.Checking, bankName)
         {
         }
 
@@ -24,18 +24,6 @@ namespace bankingProject.entities
         {
             Transaction transaction = new Transaction(amount, "Deposit", description, location);
             base.Balance += amount;
-            base.TransactionHistory.Add(transaction);
-        }
-
-        public void Withdraw(decimal amount, string description, string location)
-        {
-            if (amount > Balance)
-            {
-                throw new ArgumentException("Withdrawal amount exceeds account balance.");
-            }
-
-            Transaction transaction = new Transaction(-amount, "Withdrawal", description, location);
-            base.Balance -= amount;
             base.TransactionHistory.Add(transaction);
         }
 

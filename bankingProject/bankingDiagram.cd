@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="bankingProject.entities.AccountHolder" Collapsed="true">
-    <Position X="9" Y="0.5" Width="1.5" />
+  <Class Name="bankingProject.entities.AccountHolder">
+    <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAQABAQCAABAAAAAAAAGIEAIACAIAIABAAAAQ=</HashCode>
       <FileName>entities\AccountHolder.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="bankingProject.entities.BankPersonnel" Collapsed="true">
-    <Position X="9" Y="3.5" Width="1.5" />
+  <Class Name="bankingProject.entities.BankPersonnel">
+    <Position X="7" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>entities\BankPersonnel.cs</FileName>
@@ -17,38 +17,38 @@
       <Property Name="ID" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="bankingProject.entities.CheckingAccount" Collapsed="true">
-    <Position X="6.5" Y="2.25" Width="1.5" />
+  <Class Name="bankingProject.entities.CheckingAccount">
+    <Position X="7" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAAAAEAAAAACAAAAEAAAAAAAI=</HashCode>
       <FileName>entities\CheckingAccount.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="bankingProject.entities.ID" Collapsed="true">
-    <Position X="11" Y="2.5" Width="1.5" />
+  <Class Name="bankingProject.entities.ID">
+    <Position X="14.5" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQQAAAEAAAAQAEAAABAAEAAAAAAAACAA=</HashCode>
       <FileName>entities\ID.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="bankingProject.entities.Transaction" Collapsed="true">
-    <Position X="9" Y="1.25" Width="1.5" />
+  <Class Name="bankingProject.entities.Transaction">
+    <Position X="9.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAQAAAAAAAAAEAAIAAACAAAAAAAABAQAAAAAAAAA=</HashCode>
       <FileName>entities\Transaction.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="bankingProject.entities.WorkID" Collapsed="true">
-    <Position X="11" Y="3.5" Width="1.5" />
+  <Class Name="bankingProject.entities.WorkID">
+    <Position X="11" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAA=</HashCode>
       <FileName>entities\WorkID.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BankingProject.BankAccount" Collapsed="true">
+  <Class Name="BankingProject.BankAccount">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAAAAAAgAAAAAAAgAAAAQAIAEAAAAAQA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAAAAAgAAAAAAAgAAAAQAJAEAAAAAQA=</HashCode>
       <FileName>BankAccount.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -59,21 +59,38 @@
       <Property Name="TransactionHistory" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="bankingProject.MoneyMarketAccount" Collapsed="true">
-    <Position X="3" Y="2.25" Width="1.5" />
+  <Class Name="bankingProject.MoneyMarketAccount">
+    <Position X="2" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAARAAAAAQAAAAA=</HashCode>
       <FileName>MoneyMarketAccount.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="bankingProject.SavingsAccount" Collapsed="true">
-    <Position X="4.75" Y="2.25" Width="1.5" />
+  <Class Name="bankingProject.SavingsAccount">
+    <Position X="4.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>EAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>SavingsAccount.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="AccountType" Collapsed="true">
+  <Class Name="bankingProject.ATMMachine">
+    <Position X="18.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAgAABAAAAAAAAA=</HashCode>
+      <FileName>ATMMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bankingProject.entities.Card">
+    <Position X="17" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAIAgAAAAAAAAgAAAAAAAAAAAAAQAEA=</HashCode>
+      <FileName>entities\Card.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Account" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="AccountType">
     <Position X="1.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAABAAAA=</HashCode>

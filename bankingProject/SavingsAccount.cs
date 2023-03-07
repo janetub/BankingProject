@@ -13,8 +13,7 @@ namespace bankingProject
         /// <summary>
         /// savings account type is for money saving which offers higher interest than checking
         /// </summary>
-        public SavingsAccount (BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location)
-            : base(bankPersonnel, id, address, phoneNum, emailAdd, initialDeposit, location, AccountType.Savings)
+        public SavingsAccount (BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location, string bankName) : base(bankPersonnel, id, address, phoneNum, emailAdd, initialDeposit, location, AccountType.Savings, bankName)
         {
         }
 

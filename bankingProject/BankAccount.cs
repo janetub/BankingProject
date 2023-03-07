@@ -12,6 +12,7 @@ namespace BankingProject
         /// <summary>
         /// this is a parent/base class, not meant to be instantiated
         /// </summary>
+        public string BankName;
         public static int ACCOUNT_ID_COUNTER = 20230;
         public int AccountNumber { get; protected set; }
         public AccountHolder AccountHolder { get; protected set; }
@@ -20,7 +21,7 @@ namespace BankingProject
         public AccountType AccountType { get; protected set; }
         public List<Transaction> TransactionHistory { get; protected set; }
 
-        public BankAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location, AccountType accountType)
+        public BankAccount(BankPersonnel bankPersonnel, ID id, string address, string phoneNum, string emailAdd, decimal initialDeposit, string location, AccountType accountType, string bankName)
         {
             if (bankPersonnel is not BankPersonnel && bankPersonnel.ID.IsVerified)
             {
@@ -34,7 +35,17 @@ namespace BankingProject
             Transaction transaction = new Transaction(initialDeposit, "Account Opening", "", location);
             this.TransactionHistory.Add(transaction);
             this.AccountType = accountType;
-
+            BankName = bankName;
+        }
+        public void Withdraw(decimal amount, string description, string location)
+        {
+            if (amount > this.Balance)
+            {
+                throw new ArgumentException("Withdrawal amount exceeds account balance.");
+            }
+            Transaction transaction = new Transaction(-amount, "Withdrawal", description, location);
+            this.Balance -= amount;
+            this.TransactionHistory.Add(transaction);
         }
     }
 }
